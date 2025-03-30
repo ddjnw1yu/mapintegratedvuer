@@ -158,7 +158,10 @@ export default {
               flatmapImp.clearSearchResults();
             }
           } else if (resource.feature.type == "feature") {
-            if (flatmapImp.options && flatmapImp.options.style === 'functional') {
+            if (
+              (flatmapImp.options && flatmapImp.options.style === 'functional') ||
+              (flatmapImp.provenance && flatmapImp.provenance.style === 'functional')
+            ) {
               const filter = {
                 facet: "PMR",
                 term: "Data type",
